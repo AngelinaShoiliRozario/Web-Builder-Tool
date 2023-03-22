@@ -1,5 +1,5 @@
 <!-- navigation bar area start -->
-<div class="header-area">
+<div class="header-area" style="position: sticky; top:0px;background:white;z-index:10000;">
     <div class="navbar-area">
         <!-- Menu For Mobile Device -->
         <div class="main-responsive-nav">
@@ -14,7 +14,7 @@
             </div>
         </div>
         <!-- Menu For Desktop Device -->
-        <div class="main-nav " style="position: relative;">
+        <div class="main-nav " >
             <div class="container-fluid" style="">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="index.html">

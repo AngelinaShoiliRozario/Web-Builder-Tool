@@ -22,3 +22,6 @@ Route::get('/Felax', function () {
 Route::get('/editor', function () {
     return view('layouts.EditorMode.webpage_editor');
 });
+Route::get('/wixer', function () {
+    return view('Templates.Wixer.demo.demo');
+});
