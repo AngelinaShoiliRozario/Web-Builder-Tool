@@ -11,11 +11,28 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="banner-text-area">
-                    <h6 class="contenteditable">Luxury Hotel & Best Resort</h6>
-                    <h1 class="contenteditable">The Boutique Design & Standard Room</h1>
-                    <p class="contenteditable"> Lorem ipsum dolor sit amet, sed do eiusmod tempor ulabore et dolore
-                        magna aliqua. Quis ipsum
-                        suspendisse ultrices gravida. Risus commodo viverra.</p>
+                     
+                        <h6 onclick="contenteditable(this)">Luxury Hotel & Best Resort</h6>
+                  
+                    
+                        <h1 onclick="contenteditable(this)">The Boutique Design & Standard Room</h1>
+                   
+                             
+                        <p onclick="contenteditable(this)"> Lorem ipsum dolor sit amet, sed do eiusmod tempor ulabore et dolore
+                            magna aliqua. Quis ipsum
+                            suspendisse ultrices gravida. Risus commodo viverra.</p>
+                    
+                    {{-- <div class="contenteditable_container">
+                        <h6 class="contenteditable contenteditable1">Luxury Hotel & Best Resort</h6>
+                    </div>
+                    <div class="contenteditable_container">
+                        <h1 class="contenteditable">The Boutique Design & Standard Room</h1>
+                    </div>
+                    <div class="contenteditable_container">           
+                        <p class="contenteditable"> Lorem ipsum dolor sit amet, sed do eiusmod tempor ulabore et dolore
+                            magna aliqua. Quis ipsum
+                            suspendisse ultrices gravida. Risus commodo viverra.</p>
+                    </div> --}}
                     <a class="default-button" href="about.html">Learn More</a>
                 </div>
             </div>

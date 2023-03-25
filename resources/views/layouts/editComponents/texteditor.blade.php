@@ -1,5 +1,6 @@
-<div class="d-none" style="display: inline-block!important;position:absolute;top:100px;" id="text-editor-id">
-    <div class="editor d-flex flex-wrap">
+<span style="display: none!important;position:absolute;left:0px;z-index:1000; width:1050px;" id="text-editor-id">
+    <div class="editor d-flex flex-wrap ">
+
         <button class="btn text-white" onclick="document.execCommand('bold', false, null)">
             <i class="fa-solid fa-bold"></i>
         </button>
@@ -40,57 +41,55 @@
         </button>
 
         <div class="btn-group">
-            <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button type="button" class="btn text-white" onclick="showlineheightsub(this)">
                 Line Height
-            </button>
-            <ul class="dropdown-menu">
 
-                <li>
+            </button>
+            <ul class=""
+                style="display:none; list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:200px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);">
+
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setLineHeight(1)">Single</button>
                     <!-- <button onmouseover="this.style.backgroundColor='green'; this.style.color='white';" class="dropdown-item"
               onclick="setLineHeight(1)">Single</button> -->
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setLineHeight(2)">1.5</button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setLineHeight(2)">Double</button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setLineHeight(3)"> 3 </button>
                 </li>
 
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#" style="text-align:center; "
+                <li><a class="dropdown-item" href="#"
+                        style="text-align:center; background:#313131;color:white;padding:5px 0px;border-radius:5px;"
                         onclick="setLineHeight(null)">Custom</a>
                 </li>
             </ul>
         </div>
         <!-- Example single danger button -->
         <div class="btn-group">
-            <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button type="button" class="btn text-white">
                 Font Size
             </button>
-            <ul class="dropdown-menu">
-
-                <li>
-                    <button class="dropdown-item" onclick="setFontSize(1)">1</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" onclick="setFontSize(2)">2</button>
-                </li>
-                <li>
-                    <button class="dropdown-item" onclick="setFontSize(3)"> 3 </button>
-                </li>
+            <ul
+                style="list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:100px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);height:300px;overflow:scroll;">
+                @for ($i = 0; $i <= 90; $i++)
+                    <li>
+                        <button class="dropdown-item" onclick="setFontSize({{ $i }})"> {{ $i }}
+                        </button>
+                    </li>
+                @endfor
 
                 <li>
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                <li><a class="dropdown-item" href="#">Custom</a></li>
             </ul>
         </div>
         <!-- Example single danger button -->
@@ -230,10 +229,10 @@
         </span>
 
         <div class="btn text-success">
-            <i class="fa-solid fa-check fa-beat" style="font-size: 20px;;"></i>
+            <i class="fa-solid fa-check fa-beat" style="font-size: 20px;;" onclick="disable_editor(this)"></i>
         </div>
     </div>
-</div>
+</span>
 {{-- <div contenteditable="true" class="content" id="content"
         style="border: 1px solid transparent; outline: 1px solid transparent">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae voluptate
@@ -241,92 +240,3 @@
         tempora voluptatibus error molestias similique aliquid quod unde libero
         facilis! Alias.
     </div> --}}
-
-
-
-
-<script>
-    const showColorBox = () => {
-        console.log('hello');
-
-        document.getElementById('color_box').classList.remove('d-none');
-
-    }
-    const hideColorBox = () => {
-        console.log('hello');
-
-        document.getElementById('color_box').classList.add('d-none');
-    }
-    const changeColor = (value) => {
-        document.execCommand('foreColor', false, value);
-        // $("#content").css("color", value);
-    }
-    const setLineHeight = (value) => {
-        if (value != null) {
-            $("#content").css("line-height", value);
-        } else {
-            var lineHeight = prompt("Enter the line height (e.g., 1.5):");
-            if (lineHeight !== null) {
-                $("#content").css("line-height", lineHeight);
-            }
-        }
-
-    }
-    $("#line-height-btn").click(function() {
-        var lineHeight = prompt("Enter the line height (e.g., 1.5):");
-        if (lineHeight !== null) {
-            // $("#content").focus();
-            // $("#content").css("line-height", lineHeight);
-            $("#content").css("line-height", lineHeight);
-            if (document.queryCommandSupported("lineHeight")) {
-                // document.execCommand("lineHeight", false, lineHeight);
-            } else {
-                // fallback code for unsupported command
-                // alert("not supported");
-            }
-            // document.execCommand("lineHeight", false, lineHeight);
-        }
-    });
-
-    const createLink = () => {
-        var url = prompt("Enter the URL:");
-        if (url !== null) {
-            document.execCommand("createLink", false, url);
-        }
-
-    }
-</script>
-
-<script>
-    const setFontSize = (value) => {
-        document.execCommand("fontSize", false, value);
-    };
-
-    function changeHeadingLevel(level) {
-        document.execCommand("formatBlock", false, "h" + level);
-    }
-
-    function setFont(fontFamily) {
-        console.log("hi");
-        document.execCommand("fontName", false, fontFamily);
-    }
-
-    function changeHeading() {
-        const contentDiv = document.getElementById("content");
-        let id = contentDiv.id;
-        let c = contentDiv.className;
-
-        const newHeading = document.getElementById("heading-select").value;
-        const currentHeading = contentDiv.tagName.toLowerCase();
-
-        if (newHeading !== currentHeading) {
-            const newContent = document.createElement(newHeading);
-            newContent.innerHTML = contentDiv.innerHTML;
-            newContent.setAttribute("id", id);
-            newContent.setAttribute("class", c);
-            newContent.setAttribute("contenteditable", true);
-
-            contentDiv.parentNode.replaceChild(newContent, contentDiv);
-        }
-    }
-</script>

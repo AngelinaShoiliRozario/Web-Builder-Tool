@@ -116,34 +116,197 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
     <script>
-        const contenteditable = document.querySelectorAll('.contenteditable');
-        const newDiv = document.getElementById('text-editor-id');
-        Array.from(contenteditable).forEach((element) => {
-            element.addEventListener('click', () => {
-                const clickableDiv = element;
-                let parentDiv = element.parentNode;
-                // const newDiv = document.createElement("div");
-                newDiv.classList.remove('d-none');
-
-                parentDiv.insertBefore(newDiv, clickableDiv);
-                element.style.border = '1px solid blue';
-            });
+        let savedSelection;
+        document.addEventListener("selectionchange", function() {
+            savedSelection = window.getSelection();
         });
-        // $('.contenteditable').click(function() {
-        //     $('.contenteditable').css('border', '');
-        //     $('.contenteditable').css('position', 'relative');
 
-        //     $(this).css('border', '1px solid blue');
-        //     $(this).attr('contenteditable', true);
-        //     // JavaScript code
-        //     const clickableDiv = $(this);
-        //     let parentDiv = clickableDiv.parentNode;
+        const showlineheightsub = (tag) => {
+            console.log('hi');
+            let p = tag.parentNode.children[1]
+            if (p.style.display == 'none') {
+                p.style.display = '';
+            } else {
+                p.style.display = 'none';
+            }
+        }
 
-        //     clickableDiv.addEventListener("click", function() {
-        //         const newDiv = document.createElement("div");
-        //         newDiv.textContent = "New div block";
-        //         parentDiv.insertBefore(newDiv, clickableDiv);
-        //     });
-        // });
+        const newDiv = document.getElementById('text-editor-id');
+
+        const contenteditable = (element) => {
+
+            element.setAttribute('contenteditable', true);
+            console.log('clicked');
+
+            if (element.parentNode.classList.contains('contentEditableContainer')) {
+
+            } else {
+                const contentEditableContainer = document.querySelectorAll('.contentEditableContainer');
+                Array.from(contentEditableContainer).forEach((item) => {
+                    let parent = item.parentNode;
+                    let child = item.children[0];
+                    const copyChild = child.cloneNode(true);
+                    parent.replaceChild(copyChild, item);
+
+                });
+
+
+                const prev = document.getElementById('editor_text');
+                if (prev) {
+                    prev.remove();
+                }
+
+                // console.log(element);
+
+                const div = document.createElement('div');
+                div.classList.add('contentEditableContainer');
+                div.style.position = "relative";
+
+                // console.log(div);
+
+                const newDiv = document.getElementById('text-editor-id');
+                const copyEditor = newDiv.cloneNode(true);
+                copyEditor.setAttribute('id', 'editor_text');
+                copyEditor.style.display = "";
+                copyEditor.style.bottom = '110%';
+
+                // console.log(copyEditor);
+
+                const copy_element = element.cloneNode(true);
+
+                div.appendChild(copy_element);
+                div.appendChild(copyEditor);
+
+
+                element.parentNode.replaceChild(div, element);
+
+                // console.log(div);
+                div.style.border = '1px solid blue';
+            }
+
+
+        };
+    </script>
+    <script>
+        const disable_editor = (tag) => {
+            let parent = tag.parentNode.parentNode;
+            parent.remove();
+        }
+    </script>
+    <script>
+        const showColorBox = () => {
+            console.log('hello');
+
+            document.getElementById('color_box').classList.remove('d-none');
+
+        }
+        const hideColorBox = () => {
+            console.log('hello');
+
+            document.getElementById('color_box').classList.add('d-none');
+        }
+        const changeColor = (value) => {
+            document.execCommand('foreColor', false, value);
+            // $("#content").css("color", value);
+        }
+        const setLineHeight = (value) => {
+            console.log(value);
+            let content = document.querySelector('.contentEditableContainer').children[0];
+            console.log(content);
+            if (value != null) {
+                content.style.lineHeight = value;
+            } else {
+                var lineHeight = prompt("Enter the line height (e.g., 1.5):");
+                if (lineHeight !== null) {
+                    content.style.lineHeight = value;
+                }
+            }
+
+        }
+        $("#line-height-btn").click(function() {
+            var lineHeight = prompt("Enter the line height (e.g., 1.5):");
+            if (lineHeight !== null) {
+                // $("#content").focus();
+                // $("#content").css("line-height", lineHeight);
+                $("#content").css("line-height", lineHeight);
+                if (document.queryCommandSupported("lineHeight")) {
+                    // document.execCommand("lineHeight", false, lineHeight);
+                } else {
+                    // fallback code for unsupported command
+                    // alert("not supported");
+                }
+                // document.execCommand("lineHeight", false, lineHeight);
+            }
+        });
+
+        const createLink = () => {
+            var url = prompt("Enter the URL:");
+            if (url !== null) {
+                document.execCommand("createLink", false, url);
+            }
+
+        }
+    </script>
+
+    <script>
+        // const setFontSize = (value) => {
+
+        //     const selection = window.getSelection();
+        //     if (selection.rangeCount > 0) {
+        //         const range = selection.getRangeAt(0);
+        //         const span = document.createElement('span');
+        //         span.style.fontSize = value + 'px';
+        //         range.surroundContents(span);
+        //     }
+        // };
+
+        // JavaScript code
+        const setFontSize = (value) => {
+            const selection = savedSelection;
+            console.log(selection);
+            if (selection.rangeCount > 0) {
+                const range = selection.getRangeAt(0);
+                let span = range.commonAncestorContainer;
+                while (span && !(span.nodeName === 'SPAN' && span.getAttribute('contenteditable'))) {
+                    span = span.parentNode;
+                }
+                if (span) {
+                    span.style.fontSize = value + 'px';
+                } else {
+                    span = document.createElement('span');
+                    span.style.fontSize = value + 'px';
+                    range.surroundContents(span);
+                }
+            }
+        };
+
+
+        function changeHeadingLevel(level) {
+            document.execCommand("formatBlock", false, "h" + level);
+        }
+
+        function setFont(fontFamily) {
+            console.log("hi");
+            document.execCommand("fontName", false, fontFamily);
+        }
+
+        function changeHeading() {
+            const contentDiv = document.getElementById("content");
+            let id = contentDiv.id;
+            let c = contentDiv.className;
+
+            const newHeading = document.getElementById("heading-select").value;
+            const currentHeading = contentDiv.tagName.toLowerCase();
+
+            if (newHeading !== currentHeading) {
+                const newContent = document.createElement(newHeading);
+                newContent.innerHTML = contentDiv.innerHTML;
+                newContent.setAttribute("id", id);
+                newContent.setAttribute("class", c);
+                newContent.setAttribute("contenteditable", true);
+
+                contentDiv.parentNode.replaceChild(newContent, contentDiv);
+            }
+        }
     </script>
 @endsection
