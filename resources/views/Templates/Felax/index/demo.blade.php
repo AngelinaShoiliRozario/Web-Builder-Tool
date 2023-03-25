@@ -249,34 +249,31 @@
     </script>
 
     <script>
-        // const setFontSize = (value) => {
-
-        //     const selection = window.getSelection();
-        //     if (selection.rangeCount > 0) {
-        //         const range = selection.getRangeAt(0);
-        //         const span = document.createElement('span');
-        //         span.style.fontSize = value + 'px';
-        //         range.surroundContents(span);
-        //     }
-        // };
-
         // JavaScript code
         const setFontSize = (value) => {
-            const selection = savedSelection;
+            const selection = window.getSelection();
             console.log(selection);
+            // if (selection.rangeCount > 0) {
+            //     const range = selection.getRangeAt(0);
+            //     let span = range.commonAncestorContainer;
+            //     while (span && !(span.nodeName === 'SPAN' && span.getAttribute('contenteditable'))) {
+            //         span = span.parentNode;
+            //     }
+            //     if (span) {
+            //         span.style.fontSize = value + 'px';
+            //     } else {
+            //         span = document.createElement('span');
+            //         span.style.fontSize = value + 'px';
+            //         range.surroundContents(span);
+            //     }
+            // }
+            // document.execCommand('fontSize', false, value);
+            
             if (selection.rangeCount > 0) {
                 const range = selection.getRangeAt(0);
-                let span = range.commonAncestorContainer;
-                while (span && !(span.nodeName === 'SPAN' && span.getAttribute('contenteditable'))) {
-                    span = span.parentNode;
-                }
-                if (span) {
-                    span.style.fontSize = value + 'px';
-                } else {
-                    span = document.createElement('span');
-                    span.style.fontSize = value + 'px';
-                    range.surroundContents(span);
-                }
+                const span = document.createElement('span');
+                span.style.fontSize = value + 'px';
+                range.surroundContents(span);
             }
         };
 
