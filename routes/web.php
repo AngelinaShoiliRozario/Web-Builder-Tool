@@ -14,14 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Templates.Felax.demo');
-});
-Route::get('/Felax', function () {
-    return view('Templates.Felax.index');
-});
-Route::get('/editor', function () {
-    return view('layouts.EditorMode.webpage_editor');
-});
-Route::get('/wixer', function () {
-    return view('Templates.Wixer.demo.demo');
+    return view('Templates.Felax.index.demo');
 });
