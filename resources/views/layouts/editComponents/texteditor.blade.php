@@ -1,6 +1,9 @@
-<span style="display: none!important;position:absolute;left:0px;z-index:1000; width:1050px;" id="text-editor-id">
-    <div class="editor d-flex flex-wrap ">
-
+<span style="display: none!important;position:absolute;left:0px;z-index:1000; min-width:1100px;" id="text-editor-id">
+    <div class="editor " style="display:flex; flex-wrap:wrap;">
+        <div class="btn text-danger" style="display:flex;justify-content:center;align-items:center;">
+            {{-- <button title="Will Delete the entire Element">Delete</button> --}}
+            <i class="fa-solid fa-xmark" style="font-size: 23px;" onclick="remove_element(this)"></i>
+        </div>
         <button class="btn text-white" onclick="document.execCommand('bold', false, null)">
             <i class="fa-solid fa-bold"></i>
         </button>
@@ -43,9 +46,8 @@
         <div class="btn-group">
             <button type="button" class="btn text-white" onclick="showlineheightsub(this)">
                 Line Height
-
             </button>
-            <ul class=""
+            <ul
                 style="display:none; list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:200px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);">
 
                 <li style="padding:5px;">
@@ -74,11 +76,11 @@
         </div>
         <!-- Example single danger button -->
         <div class="btn-group">
-            <button type="button" class="btn text-white">
+            <button type="button" class="btn text-white" onclick="showFontSize(this)">
                 Font Size
             </button>
             <ul
-                style="list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:100px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);height:300px;overflow:scroll;">
+                style="display:none;list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:100px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);height:300px;overflow:scroll;">
                 @for ($i = 0; $i <= 90; $i++)
                     <li>
                         <button class="dropdown-item" onclick="setFontSize({{ $i }})"> {{ $i }}
@@ -95,99 +97,103 @@
         <!-- Example single danger button -->
         <!-- Example single danger button -->
         <div class="btn-group">
-            <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button type="button" class="btn text-white " onclick="showfontFamilySub(this)">
                 Font Family
             </button>
-            <ul class="dropdown-menu">
-                <li>
+            <ul
+                style="display:none; list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:200px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);">
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Arial, sans-serif')">
                         Arial
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Times New Roman, serif')">
                         Times New Roman
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Tahoma, sans-serif')">
                         Tahoma
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Verdana, sans-serif')">
                         Verdana
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Georgia, serif')">
                         Georgia
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Times New Roman, serif')">
                         Times New Roman
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Lucida Console, Monaco, monospace')">
                         Monospace
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="setFont('Courier New, monospace')">
                         Courier New
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                <li style="padding:5px;"><a class="dropdown-item" href="#"
+                        style="text-align:center; background:#313131;color:white;padding:5px 0px;border-radius:5px;">Separated
+                        link</a></li>
             </ul>
         </div>
         <!-- Example single danger button -->
         <div class="btn-group">
-            <button type="button" class="btn text-white dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">
+            <button type="button" class="btn  text-white" onclick="showHeadingSub(this)">
                 Heading
             </button>
-            <ul class="dropdown-menu">
-                <li>
+            <ul
+                style="display:none; list-style-type:none;position:absolute;background:white;top:100%;padding:10px 20px;width:200px;box-shadow: 0px 2px 5px rgba(0,0,0,0.3);">
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(1)">
                         Heading 1
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(2)">
                         Heading 2
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(3)">
                         Heading 3
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(4)">
                         Heading 4
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(5)">
                         Heading 5
                     </button>
                 </li>
-                <li>
+                <li style="padding:5px;">
                     <button class="dropdown-item" onclick="changeHeadingLevel(6)">
                         Heading 6
                     </button>
                 </li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li>
+                <li style="padding:5px;">
                     <hr class="dropdown-divider" />
                 </li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                <li style="padding:5px;"><a class="dropdown-item" href="#"
+                        style="text-align:center; background:#313131;color:white;padding:5px 0px;border-radius:5px;">Separated
+                        link</a></li>
             </ul>
         </div>
         <span class="d-flex justify-content-center position-relative"

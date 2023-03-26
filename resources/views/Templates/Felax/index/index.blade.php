@@ -54,21 +54,21 @@
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="about-text-area pl-20">
-                    <div class="default-section-title">
-                        <span>About Us</span>
-                        <h3>We Are Here To Make Your Feeling Look More Elegant</h3>
+                    <div class="">
+                        <span onclick="contenteditable(this)" style="color:var(--mainColor);margin-bottom:8px;"><b>About Us</b></span>
+                        <h3 onclick="contenteditable(this)" style="font-weight: 900;font-size: 30px;">We Are Here To Make Your Feeling Look More Elegant</h3>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid labore et
+                    <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid labore et
                         dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo vverra ecenas
                         accumsan lacus vel facilisis.</p>
                     <div class="about-card-area">
-                        <div class="about-card">
-                            <i class="flaticon-star"></i>
-                            <h4>Consistently High Guest Satisfaction Since 2020</h4>
+                        <div class="" style="display:flex;align-items:center;gap:10px;">
+                            <i class="flaticon-star" style="color:var(--mainColor);font-size: 30px;"></i>
+                            <h4 onclick="contenteditable(this)" style="flex:1;">Consistently High Guest Satisfaction Since 2020</h4>
                         </div>
-                        <div class="about-card">
-                            <i class="flaticon-medal"></i>
-                            <h4>Top Ranked Value Home stay In New York, USA</h4>
+                        <div class="" style="display: flex;align-items:center;gap:10px;">
+                            <i class="flaticon-medal" style="color:var(--mainColor);font-size: 30px;"></i>
+                            <h4 onclick="contenteditable(this)" >Top Ranked Value Home stay In New York, USA</h4>
                         </div>
                     </div>
                     <a class="default-button" href="about.html">Read More</a>
@@ -82,52 +82,52 @@
 <!-- Amenities area start -->
 <div class="amenities ptb-100 bg-f8f8f8">
     <div class="container">
-        <div class="default-section-title default-section-title-middle">
-            <span>Amenities</span>
-            <h3>Make Your Stay Memorable</h3>
+        <div class=" default-section-title-middle">
+            <span onclick="contenteditable(this)">Amenities</span>
+            <h3 onclick="contenteditable(this)"><b>Make Your Stay Memorable</b></h3>
         </div>
         <div class="secton-content">
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-car"></i>
-                        <h4><a href="services.html">Airport Transfer</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <h4><a href="services.html" >Airport Transfer</a></h4>
+                        <p onclick="contenteditable(this)"> Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-wifi"></i>
                         <h4><a href="services.html">Fibre Internet</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-chef"></i>
                         <h4><a href="services.html">Equipped Kitchen</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-smart-tv"></i>
                         <h4><a href="services.html">Smart TV</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-stack-of-presentation-cards"></i>
                         <h4><a href="services.html">Card Access</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div class="amenities-card">
                         <i class="flaticon-housekeeping"></i>
                         <h4><a href="services.html">Housekeeping</a></h4>
-                        <p>Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
+                        <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet consectetu piscing elit dnjffined.</p>
                     </div>
                 </div>
             </div>
@@ -183,8 +183,8 @@
 <div class="testimonial ptb-100">
     <div class="container">
         <div class="default-section-title default-section-title-middle">
-            <span>Testimonial</span>
-            <h3>What Our Customers Say</h3>
+            <span class="inner_span" onclick="contenteditable(this)">Testimonial</span>
+            <h3 class="inner_h3" onclick="contenteditable(this)">What Our Customers Say</h3>
         </div>
         <div class="section-content">
             <div class="testimonial-content-area">
@@ -255,13 +255,13 @@
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="discover-text-area pl-20">
                     <div class="default-section-title">
-                        <span>Luxury Hotel & Best Resort</span>
-                        <h3>Discover Our Locations Luxury Hotel In New York City</h3>
+                        <span onclick="contenteditable(this)">Luxury Hotel & Best Resort</span>
+                        <h3 onclick="contenteditable(this)">Discover Our Locations Luxury Hotel In New York City</h3>
                     </div>
-                    <p>On the other hand, we denounce with righteous indignation and dislike men who are soguiled and
+                    <p onclick="contenteditable(this)">On the other hand, we denounce with righteous indignation and dislike men who are soguiled and
                         demoralized by the charms of pleasure of the moment, so blinded by desire, that t cannot foresee
                         the pain and trouble that are bound to ensue; and equal blame belongs.</p>
-                    <p>those who fail in their duty through weakness of will, which is the same as saying throuhrinking
+                    <p onclick="contenteditable(this)">those who fail in their duty through weakness of will, which is the same as saying throuhrinking
                         from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour,
                         when our power of choice is untrammelled and when nothing prevents our being able.</p>
                     <a class="default-button" href="pricing.html">All Packages</a>
@@ -306,7 +306,7 @@
             <div class="newsletter-content">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h3>Subscribe To Our Mailing List</h3>
+                        <h3 onclick="contenteditable(this)" class="hascrossbtn">Subscribe To Our Mailing List</h3>
                     </div>
                     <div class="col-lg-6">
                         <div class="newsletter-forms">

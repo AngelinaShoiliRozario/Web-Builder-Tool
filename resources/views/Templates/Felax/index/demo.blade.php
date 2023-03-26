@@ -67,6 +67,10 @@
             background-color: #313131;
             padding: 10px;
         }
+
+        #text-editor-id:active {
+            cursor: move;
+        }
     </style>
     <!-- Link of CSS files -->
     <link rel="stylesheet" href="{{ asset('/assets/Felax/css/animate.min.css') }}">
@@ -86,6 +90,7 @@
 @endsection
 
 @section('site')
+    @include('layouts.editComponents.button_editor')
     @include('layouts.editComponents.texteditor')
     @include('Templates.Felax.index.index')
 @endsection
@@ -115,12 +120,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-    <script>
-        let savedSelection;
-        document.addEventListener("selectionchange", function() {
-            savedSelection = window.getSelection();
-        });
 
+    <script>
+        const edit_button = (tag) => {
+
+        }
+
+        const remove_element = (tag) => {
+            let parent = tag.parentNode.parentNode.parentNode.parentNode;
+            parent.remove();
+        }
         const showlineheightsub = (tag) => {
             console.log('hi');
             let p = tag.parentNode.children[1]
@@ -134,6 +143,8 @@
         const newDiv = document.getElementById('text-editor-id');
 
         const contenteditable = (element) => {
+
+            console.log('parameter-  ' + element);
 
             element.setAttribute('contenteditable', true);
             console.log('clicked');
@@ -246,6 +257,33 @@
             }
 
         }
+        const showfontFamilySub = (tag) => {
+            let parent = tag.parentNode;
+            let subpart = parent.children[1];
+            if (subpart.style.display === 'none') {
+                subpart.style.display = ''
+            } else {
+                subpart.style.display = 'none'
+            }
+        }
+        const showHeadingSub = (tag) => {
+            let parent = tag.parentNode;
+            let subpart = parent.children[1];
+            if (subpart.style.display === 'none') {
+                subpart.style.display = ''
+            } else {
+                subpart.style.display = 'none'
+            }
+        }
+        const showFontSize = (tag) => {
+            let parent = tag.parentNode;
+            let subpart = parent.children[1];
+            if (subpart.style.display === 'none') {
+                subpart.style.display = ''
+            } else {
+                subpart.style.display = 'none'
+            }
+        }
     </script>
 
     <script>
@@ -268,7 +306,7 @@
             //     }
             // }
             // document.execCommand('fontSize', false, value);
-            
+
             if (selection.rangeCount > 0) {
                 const range = selection.getRangeAt(0);
                 const span = document.createElement('span');

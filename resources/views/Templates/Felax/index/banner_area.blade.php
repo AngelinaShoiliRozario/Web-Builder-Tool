@@ -12,13 +12,13 @@
             <div class="col-lg-6">
                 <div class="banner-text-area">
                      
-                        <h6 onclick="contenteditable(this)">Luxury Hotel & Best Resort</h6>
+                        <h6 onclick="contenteditable(this)" class="hascrossbtn">Luxury Hotel & Best Resort</h6>
                   
                     
-                        <h1 onclick="contenteditable(this)">The Boutique Design & Standard Room</h1>
+                        <h1 onclick="contenteditable(this)" class="hascrossbtn">The Boutique Design & Standard Room</h1>
                    
                              
-                        <p onclick="contenteditable(this)"> Lorem ipsum dolor sit amet, sed do eiusmod tempor ulabore et dolore
+                        <p onclick="contenteditable(this)" class="hascrossbtn"> Lorem ipsum dolor sit amet, sed do eiusmod tempor ulabore et dolore
                             magna aliqua. Quis ipsum
                             suspendisse ultrices gravida. Risus commodo viverra.</p>
                     
@@ -33,7 +33,7 @@
                             magna aliqua. Quis ipsum
                             suspendisse ultrices gravida. Risus commodo viverra.</p>
                     </div> --}}
-                    <a class="default-button" href="about.html">Learn More</a>
+                    <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a>
                 </div>
             </div>
             <div class="col-lg-6">

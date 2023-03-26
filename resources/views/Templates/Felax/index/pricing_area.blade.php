@@ -1,8 +1,8 @@
 <div class="pricing ptb-100 bg-f8f8f8">
     <div class="container">
         <div class="default-section-title default-section-title-middle">
-            <span>Special Promotions</span>
-            <h3>Top Offers This Week</h3>
+            <span class="inner_span" onclick="contenteditable(this)">Special Promotions</span>
+            <h3 class="inner_h3" onclick="contenteditable(this)">Top Offers This Week</h3>
         </div>
         <div class="section-content">
             <div class="row justify-content-center">

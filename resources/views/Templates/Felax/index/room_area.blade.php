@@ -1,8 +1,9 @@
 <div class="rooms ptb-100">
     <div class="container">
         <div class="default-section-title default-section-title-middle">
-            <span>Rooms Type</span>
-            <h3>Discover Our Rooms</h3>
+            
+            <span class="inner_span" onclick="contenteditable(this)">Rooms Type</span>
+            <h3 class="inner_h3" onclick="contenteditable(this)">Discover Our Rooms</h3>
         </div>
     </div>
     <div class="section-content room-area-content">

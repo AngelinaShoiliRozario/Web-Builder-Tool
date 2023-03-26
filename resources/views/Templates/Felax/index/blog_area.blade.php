@@ -1,8 +1,8 @@
 <div class="blog ptb-100">
     <div class="container">
         <div class="default-section-title default-section-title-middle">
-            <span class="contenteditable">Blog</span>
-            <h3 class="contenteditable">News Feeds And Article</h3>
+            <span class="inner_span" onclick="contenteditable(this)">Blog</span>
+            <h3 class="inner_h3" onclick="contenteditable(this)">News Feeds And Article</h3>
         </div>
         <div class="section-content">
             <div class="row justify-content-center">
@@ -19,9 +19,9 @@
                                     <li><i class="far fa-comment"></i> No Comments</li>
                                 </ul>
                             </div>
-                            <h4><a href="blog-details.html" class="contenteditable">Hotel June’s Upcoming Artist In
+                            <h4><a href="blog-details.html" onclick="contenteditable(this)">Hotel June’s Upcoming Artist In
                                     Residence</a></h4>
-                            <p class="contenteditable">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
+                            <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna
                             </p>
                             <a class="default-button default-button-2" href="blog-details.html">Read More</a>
@@ -41,9 +41,9 @@
                                     <li><i class="far fa-comment"></i> No Comments</li>
                                 </ul>
                             </div>
-                            <h4><a href="blog-details.html" class="contenteditable">Things Hostels Do Better Than Posh
+                            <h4><a href="blog-details.html">Things Hostels Do Better Than Posh
                                     Hotels</a></h4>
-                            <p class="contenteditable">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
+                            <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna
                             </p>
                             <a class="default-button default-button-2" href="blog-details.html">Read More</a>
@@ -63,9 +63,9 @@
                                     <li><i class="far fa-comment"></i> No Comments</li>
                                 </ul>
                             </div>
-                            <h4><a href="blog-details.html" class="contenteditable">5 Simple Tricks For Getting Stellar
+                            <h4><a href="blog-details.html">5 Simple Tricks For Getting Stellar
                                     Hotel Service</a></h4>
-                            <p class="contenteditable">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
+                            <p onclick="contenteditable(this)">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut
                                 labore et dolore magna
                             </p>
                             <a class="default-button default-button-2" href="blog-details.html">Read More</a>

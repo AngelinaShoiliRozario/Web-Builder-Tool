@@ -1359,7 +1359,7 @@ Default button Area CSS
 /*================================================
 Default Section Area CSS
 =================================================*/
-.default-section-title span {
+.default-section-title .inner_span {
   margin-bottom: 12px;
   display: inline-block;
   color: var(--mainColor);
@@ -1368,7 +1368,7 @@ Default Section Area CSS
   font-family: var(--fontFamily2);
 }
 
-.default-section-title h3 {
+.default-section-title .inner_h3 {
   line-height: 1.4;
   margin-top: -5px;
   font-size: 36px;
