@@ -208,7 +208,7 @@
     
 
     // language select
-    $("select").niceSelect();
+    $(".select").niceSelect();
 
     // TweenMax JS
     $('.why-we-img-area').mousemove(function(e){

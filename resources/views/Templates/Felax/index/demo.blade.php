@@ -305,14 +305,15 @@
             //         range.surroundContents(span);
             //     }
             // }
-            // document.execCommand('fontSize', false, value);
+            document.execCommand('fontSize', false, value);
 
-            if (selection.rangeCount > 0) {
-                const range = selection.getRangeAt(0);
-                const span = document.createElement('span');
-                span.style.fontSize = value + 'px';
-                range.surroundContents(span);
-            }
+            // if (selection.rangeCount > 0) {
+            //     const range = selection.getRangeAt(0);
+            //     const span = document.createElement('span');
+            //     span.style.fontSize = value + 'px';
+            //     range.surroundContents(span);
+                
+            // }
         };
 
 

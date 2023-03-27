@@ -23,7 +23,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="booking-card-2">
                     <label for="guest">Guest</label>
-                    <select class="form-select" id="guest">
+                    <select class="form-select select" id="guest">
                         <option selected disabled>Number Of Guests</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
