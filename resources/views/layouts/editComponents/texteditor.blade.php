@@ -2,7 +2,7 @@
     <div class="editor " style="display:flex; flex-wrap:wrap;">
         <div class="btn text-danger" style="display:flex;justify-content:center;align-items:center;">
             {{-- <button title="Will Delete the entire Element">Delete</button> --}}
-            <i class="fa-solid fa-xmark" style="font-size: 23px;" onclick="remove_element(this)"></i>
+            <i class="fa-solid fa-trash-can" style="font-size: 23px;" onclick="remove_element(this)"></i>
         </div>
         <button class="btn text-white" onclick="document.execCommand('bold', false, null)">
             <i class="fa-solid fa-bold"></i>

@@ -122,8 +122,9 @@
     </script>
 
     <script>
-        const edit_button = (tag) => {
-
+        const remove_btn_editor = (tag) =>{
+let parent = tag.parentNode.parentNode.parentNode.parentNode;
+parent.style.display='none';
         }
 
         const remove_element = (tag) => {

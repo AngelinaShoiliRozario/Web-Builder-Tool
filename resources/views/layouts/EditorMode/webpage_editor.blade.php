@@ -29,7 +29,16 @@
         </div>
     </main>
     @yield('script_imports')
-   
+    <script>
+        // setting global variable
+        let global_btn ;
+    </script>
+   <script>
+    const edit_button = (tag) =>{
+        global_btn = tag;
+        console.log(global_btn);
+    }
+   </script>
 </body>
 
 </html>

@@ -33,7 +33,9 @@
                             magna aliqua. Quis ipsum
                             suspendisse ultrices gravida. Risus commodo viverra.</p>
                     </div> --}}
-                    <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a>
+                    {{-- <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a> --}}
+                    <span class="default-button" onclick="edit_button(this)">Learn More</span>
+
                 </div>
             </div>
             <div class="col-lg-6">
