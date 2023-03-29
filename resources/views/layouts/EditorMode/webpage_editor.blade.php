@@ -43,19 +43,26 @@
             let check = document.querySelector('#selected_btn__');
             let button_editor = document.querySelector('#drag_btn_item__');
 
-            button_editor.style.display='';
+            button_editor.style.display = '';
 
-            
+
             if (check != tag && check != null) {
                 check.setAttribute('id', '');
-            console.log('check');
+                console.log('check');
                 console.log(check);
             }
             tag.setAttribute('id', 'selected_btn__');
 
+            let btn_text = document.querySelector('#btn_editor_btn_text');
+            btn_text.value = tag.innerHTML;
+
             console.log('tag');
 
             console.log(tag);
+        }
+        const btn_text_changer = (tag) => {
+            let selected_btn__ = document.querySelector('#selected_btn__');
+            selected_btn__.innerHTML = tag.value;
         }
     </script>
 </body>

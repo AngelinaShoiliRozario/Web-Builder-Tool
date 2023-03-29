@@ -122,9 +122,9 @@
     </script>
 
     <script>
-        const remove_btn_editor = (tag) =>{
-let parent = tag.parentNode.parentNode.parentNode.parentNode;
-parent.style.display='none';
+        const remove_btn_editor = (tag) => {
+            let parent = tag.parentNode.parentNode.parentNode.parentNode;
+            parent.style.display = 'none';
         }
 
         const remove_element = (tag) => {
@@ -313,7 +313,7 @@ parent.style.display='none';
             //     const span = document.createElement('span');
             //     span.style.fontSize = value + 'px';
             //     range.surroundContents(span);
-                
+
             // }
         };
 

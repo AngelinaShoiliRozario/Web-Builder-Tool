@@ -20,7 +20,8 @@
             <div class="content">
                 <div class="box1" style="background: white;padding:20px;margin-bottom:10px;">
                     <label for="">Text On button</label>
-                    <input type="text" value="Content" style="width:100%;padding:3px;">
+                    <input type="text" value="" style="width:100%;padding:3px;" id="btn_editor_btn_text"
+                        oninput="btn_text_changer(this)">
                 </div>
                 <p>Select where button links to</p>
                 <div>
@@ -410,6 +411,7 @@
     // Set the drag event listeners only on the handle element
     dragHandle.addEventListener("mousedown", dragStart);
     dragHandle.addEventListener("mouseup", dragEnd);
+
     function dragStart(e) {
         startX = e.clientX;
         startY = e.clientY;
@@ -418,6 +420,7 @@
         document.addEventListener("mousemove", drag);
         document.addEventListener("mouseup", dragEnd);
     }
+
     function drag(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
@@ -432,6 +435,7 @@
         startX = mouseX;
         startY = mouseY;
     }
+
     function dragEnd(e) {
         // Remove the mousemove and mouseup event listeners
         document.removeEventListener("mousemove", drag);
