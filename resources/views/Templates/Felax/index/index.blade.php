@@ -71,7 +71,10 @@
                             <h4 onclick="contenteditable(this)" >Top Ranked Value Home stay In New York, USA</h4>
                         </div>
                     </div>
-                    <a class="default-button" href="about.html">Read More</a>
+                    {{-- <a class="default-button" href="about.html">Read More</a> --}}
+                    <span class="default-button" onclick="edit_button(this)">Read More</span>
+
+                    
                 </div>
             </div>
         </div>

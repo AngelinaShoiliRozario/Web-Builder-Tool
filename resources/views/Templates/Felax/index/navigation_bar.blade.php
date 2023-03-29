@@ -1,5 +1,5 @@
 <!-- navigation bar area start -->
-<div class="header-area" style="position: sticky; top:0px;background:white;z-index:10000;">
+<div  style="position: sticky; top:0px;background:white;z-index:10!important;">
     <div class="navbar-area">
         <!-- Menu For Mobile Device -->
         <div class="main-responsive-nav">

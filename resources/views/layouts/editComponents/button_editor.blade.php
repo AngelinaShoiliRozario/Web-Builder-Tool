@@ -1,5 +1,5 @@
-<div id="drag_item__"
-    style="top:300px;left:200px;background:#f2f2f2;color:#2f373a;width:380px;padding:0px;z-index:10000;box-shadow:0 0 5px gray;box-sizing:border-box;position:absolute;">
+<div id="drag_btn_item__"
+    style="top:300px;left:200px;background:#f2f2f2;color:#2f373a;width:380px;padding:0px;z-index:1000;box-shadow:0 0 5px gray;box-sizing:border-box;position:fixed;display:none;">
     <nav id="drag-handle"
         style="cursor:move;background:#2f373a;color:white;padding:10px;display:flex;justify-content:space-between;">
         <div>
@@ -402,8 +402,8 @@
 </div>
 <script>
     // for dragging
-    var dragItem = document.querySelector("#drag_item__");
-    var dragHandle = document.querySelector("#drag_item__");
+    var dragItem = document.querySelector("#drag_btn_item__");
+    var dragHandle = document.querySelector("#drag-handle");
     // var dragHandle2 = document.querySelector("#drag-handle2");
     // Initialize the variables used to track the position of the draggable div
     var startX, startY, mouseX, mouseY, deltaX, deltaY;
