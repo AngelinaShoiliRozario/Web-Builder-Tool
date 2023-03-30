@@ -34,7 +34,9 @@
                             suspendisse ultrices gravida. Risus commodo viverra.</p>
                     </div> --}}
                     {{-- <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a> --}}
-                    <span class="default-button" onclick="edit_button(this)">Learn More</span>
+                    <div class="button-container__">
+                        <span class="default-button" onclick="edit_button(this)">Learn More</span>
+                    </div>
 
                 </div>
             </div>

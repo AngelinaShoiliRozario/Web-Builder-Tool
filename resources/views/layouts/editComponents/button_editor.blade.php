@@ -14,9 +14,9 @@
     </nav>
     <div id="button_content" style="height:100%;">
         <h3
-            style="cursor:grab; text-align:center;text-transform:uppercase;border-top:1px solid gray;background:#2f373a;color:white;padding:10px;margin-bottom:0px!important;">
+            style=" text-align:center;text-transform:uppercase;border-top:1px solid gray;background:#2f373a;color:white;padding:10px;margin-bottom:0px!important;">
             Button Content</h3>
-        <div style="height:500px;overflow:scroll!important;padding:15px;">
+        <div style="height:500px;overflow-y:scroll!important;padding:15px;">
             <div class="content">
                 <div class="box1" style="background: white;padding:20px;margin-bottom:10px;">
                     <label for="">Text On button</label>
@@ -136,17 +136,29 @@
                 onclick="show_sub_part(this,'spacing__')">Spacing</span>
         </nav>
         <div>
-            <div style="height: 500px;overflow:scroll!important;padding:10px;">
+            <div style="height: 500px;overflow-y:scroll!important;padding:10px;">
 
                 <div class="layout" id="layout__" style="cursor:pointer;background: white;">
                     <div>
 
-                        <div style="display:flex;align-items:center;justify-content:center;padding:15px;">
-                            <span
-                                style="background: #6f8188;padding:10px 40px;border-radius:8px;color:white;">Button</span>
-                            <span style="margin-left:50px;">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
+                        <div style="display:flex;align-items:center;justify-content:center;padding:15px;" onclick=" document.querySelector('#btn_side_menu___').style.display==='none' ?  document.querySelector('#btn_side_menu___').style.display='' : document.querySelector('#btn_side_menu___').style.display='none'">
+                            <div >
+                                <span
+                                    style="background: #6f8188;padding:10px 40px;border-radius:8px;color:white;">Button</span>
+                                <span style="margin-left:50px;">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="btn_side_menu___" style="box-shadow:0 0 5px gray;position:absolute;height:100%;width:100%;background:#f2f2f2;top:0%;left:100%;cursor:default;display:none;">
+                          <div style="width:100%;text-align:right;">
+                            <i class="fa-solid fa-xmark" style="font-size: 23px;cursor:pointer;background:gray;padding:5px 9px;" onclick="document.querySelector('#btn_side_menu___').style.display='none'"></i>
+                          </div>
+                          <div  style="height:100%;width:100%;overflow-y:scroll;">
+
+                              @include('layouts.editComponents.styled_buttons')
+                          </div>
+                           
                         </div>
                         <hr>
                         <div style="display:flex;justify-content:center;padding:15px;">
@@ -168,7 +180,7 @@
 
                                     <input type="range" id="slider_1" name="slider_1" min="10"
                                         max="100" value="5"
-                                        oninput="document.querySelector('#btn_width_1').value = document.querySelector('#slider_1').value">
+                                        oninput="width_change_of_btn(this)">
                                     <input type="text" id="btn_width_1" value="0"
                                         style="width:60px;padding:5px;text-align:center;">
                                 </div>
@@ -180,7 +192,7 @@
 
                                     <input type="range" id="slider_2" name="slider_2" min="10"
                                         max="100" value="5"
-                                        oninput="document.querySelector('#btn_width_2').value = document.querySelector('#slider_2').value">
+                                        oninput="height_change_of_btn(this)">
                                     <input type="text" id="btn_width_2" value="0"
                                         style="width:60px;padding:3px 5px ;text-align:center;">
                                 </div>
@@ -199,7 +211,7 @@
                             </div>
                             <div style="display: flex;justify-content:space-between;margin-top:8px;">
                                 <label for="" style="width:30%;">Font Size</label>
-                                <select name="" id="" style="width:60%;padding:3px;">
+                                <select name="" id="" style="width:60%;padding:3px;" onchange="btn_font_size_changer(this)">
                                     @for ($i = 5; $i < 90; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
@@ -215,12 +227,12 @@
                                 <label for="" style="width:30%;">Font Format</label>
                                 <div>
                                     <span
-                                        style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;"><i
-                                            class="fa-solid fa-bold"></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
-                                            class="fa-solid fa-underline"></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
-                                            class="fa-solid fa-italic"></i></span>
+                                        style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;" onclick="change_btn_transform('bold')"><i
+                                            class="fa-solid fa-bold" ></i></span>
+                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform('underline')"><i
+                                            class="fa-solid fa-underline" ></i></span>
+                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform('italic')"><i
+                                            class="fa-solid fa-italic" ></i></span>
 
                                 </div>
                             </div>

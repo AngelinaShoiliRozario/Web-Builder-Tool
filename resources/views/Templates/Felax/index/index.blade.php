@@ -68,7 +68,7 @@
                         </div>
                         <div class="" style="display: flex;align-items:center;gap:10px;">
                             <i class="flaticon-medal" style="color:var(--mainColor);font-size: 30px;"></i>
-                            <h4 onclick="contenteditable(this)" >Top Ranked Value Home stay In New York, USA</h4>
+                            <h4 onclick="contenteditable(this)">Top Ranked Value Home stay In New York, USA</h4>
                         </div>
                     </div>
                     {{-- <a class="default-button" href="about.html">Read More</a> --}}
