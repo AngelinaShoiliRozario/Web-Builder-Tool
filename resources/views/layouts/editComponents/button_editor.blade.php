@@ -197,6 +197,18 @@
                                         style="width:60px;padding:3px 5px ;text-align:center;">
                                 </div>
                             </div>
+                             <div style="display: flex;align-items:center;margin-top:10px;">
+                                <label for="" style="width:30%;">Corner Curve</label>
+                                <div
+                                    style="width:70%;display: flex; justify-content:space-between; align-items:center;">
+
+                                    <input type="range" id="slider_3" name="slider_3" min="5"
+                                        max="100" value="5" step="1"
+                                        oninput="border_radius_change_of_btn(this)">
+                                    <input type="text" id="btn_width_3" value="0"
+                                        style="width:60px;padding:3px 5px ;text-align:center;">
+                                </div>
+                            </div>
                         </div>
                         <div style="background: white;padding:15px;margin-bottom:20px;">
                             <div style="display: flex;justify-content:space-between;">
@@ -239,12 +251,12 @@
                             <div style="display: flex;justify-content:space-between;margin-top:25px;">
                                 <label for="" style="width:30%;">Alignment</label>
                                 <div>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span onclick="align_this_btn('left')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-align-left"></i></span>
-                                    <span
+                                    <span  onclick="align_this_btn('center')"
                                         style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow:inset 0 0 5px gray;"><i
                                             class="fa-solid fa-align-center"></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span  onclick="align_this_btn('right')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-align-right"></i></span>
 
                                 </div>
@@ -259,12 +271,12 @@
                             <div style="display: flex;justify-content:space-between;margin-top:25px;">
                                 <label for="">Hover Font Format</label>
                                 <div>
-                                    <span
+                                    <span onclick="set_btn_hover_transform('bold')"
                                         style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;"><i
                                             class="fa-solid fa-bold"></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span onclick="set_btn_hover_transform('underline')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-underline"></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span onclick="set_btn_hover_transform('italic')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-italic"></i></span>
 
                                 </div>

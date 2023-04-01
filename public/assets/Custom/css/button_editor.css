@@ -1,0 +1,9 @@
+.hover_to_italic:hover{
+    font-style: italic;
+}
+.hover_to_underline:hover {
+    text-decoration: underline;
+}
+.hover_to_bold:hover {
+    font-weight: bold;
+}
