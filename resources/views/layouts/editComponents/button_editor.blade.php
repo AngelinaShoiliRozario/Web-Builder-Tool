@@ -1,3 +1,5 @@
+
+
 <div id="drag_btn_item__"
     style="top:300px;left:200px;background:#f2f2f2;color:#2f373a;width:380px;padding:0px;z-index:1000;box-shadow:0 0 5px gray;box-sizing:border-box;position:fixed;display:none;">
     <nav id="drag-handle"
@@ -213,12 +215,15 @@
                         <div style="background: white;padding:15px;margin-bottom:20px;">
                             <div style="display: flex;justify-content:space-between;">
                                 <label for="" style="width:30%;">Font</label>
-                                <select name="" id="" style="width:60%;padding:3px;">
+                                <select name="" id="" style="width:60%;padding:3px;" onchange="changeBtnFontFamily(this)">
                                     <option value="">Abril Falface</option>
                                     <option value="Arial">Arial</option>
                                     <option value="Comfortoo">Comfortoo</option>
                                     <option value="Red Rose">Red Rose</option>
                                     <option value="Work Sans">Work Sans</option>
+                                    <option class="ApplyFontFamilyHandrawn" value="Delicious Handrawn">Delicious Handrawn</option>
+                                    <option class="ApplyFontFamilyOswald" value="Oswald sans-serif">Oswald & sans-serif</option>
+                                    <option class="ApplyFontFamilyRoboto" value="Roboto Mono">Roboto Mono</option>
                                 </select>
                             </div>
                             <div style="display: flex;justify-content:space-between;margin-top:8px;">
@@ -229,11 +234,9 @@
                                     @endfor
                                 </select>
                             </div>
-                            <div style="display: flex;justify-content:space-between;margin-top:8px;">
+                            <div style="display: flex;justify-content:space-between; align-items: center; margin-top:8px;">
                                 <label for="" style="width:30%;">Font Color</label>
-                                <div
-                                    style="height: 25px;width:25px;border-radius:50%;border:1.5px solid gray;background:white;">
-                                </div>
+                                <div class="color-picker"></div>
                             </div>
                             <div style="display: flex;justify-content:space-between;margin-top:25px;">
                                 <label for="" style="width:30%;">Font Format</label>
@@ -284,8 +287,15 @@
                             <div style="display: flex;align-items:center;margin-top:10px;">
                                 <label for="" style="width:50%;">Background Color</label>
                                 <div style="width:50%;display: flex; justify-content:end; align-items:center;">
+                                    {{-- <div class="bg-color-picker"></div> --}}
+                                    <span style="background: blue;height:25px;width:25px;border-radius:50%;border:2px solid white;outline:1px solid gray;"></span>
+                                </div>
+                            </div>
+                            <div style="display: flex;align-items:center;margin-top:10px;">
+                                <label for="" style="width:50%;">Gradient BG Color</label>
+                                <div style="width:50%;display: flex; justify-content:end; align-items:center;">
                                     <span
-                                        style="background: blue;height:25px;width:25px;border-radius:50%;border:2px solid white;outline:1px solid gray;"></span>
+                                        style="background: blue;height:25px;width:50px;border:2px solid white;outline:1px solid gray;" class="gradient-btn btn"></span>
                                 </div>
                             </div>
                             <div style="display: flex;align-items:center;margin-top:10px;">
@@ -425,6 +435,61 @@
         </div>
     </div>
 </div>
+
+
+<!-- modal div  -->
+<div style="" class="modal-container">
+    <div style="" class="modal">
+      <div class="gradient-modal-body">
+        <div class="mod gradient-modal-header">
+          <!-- Header -->
+          <span onclick="modalClose()" class="gradient-close">&times;</span>
+        </div>
+        <div class="mod gradient-modal-content">
+          <div class="gradient-box" id="priview"></div>
+          <div class="gradient-row options">
+            <div class="column direction">
+              <p>Direction</p>
+              <div class="select-box ml-2">
+                <select id="direction-option" oninput="generateGradient()">
+                  <option value="to top" selected>Top</option>
+                  <option value="to right top">Right top</option>
+                  <option value="to right">Right</option>
+                  <option value="to right bottom">Right bottom</option>
+                  <option value="to bottom">Bottom</option>
+                  <option value="to left bottom">Left bottom</option>
+                  <option value="to left">Left</option>
+                  <option value="to left top" selected>Left top</option>
+                </select>
+              </div>
+            </div>
+            <div class="column palette">
+              <p>Colors</p>
+              <div class="colors">
+                <input
+                  type="color"
+                  value="#5665E9"
+                  oninput="generateGradient()"
+                />
+                <input
+                  type="color"
+                  value="#A271F8"
+                  oninput="generateGradient()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mod gradient-modal-footer py-2">
+          <button onclick="modalClose()" class="py-1 px-2">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal div  -->
+
+
+
 <script>
     // for dragging
     var dragItem = document.querySelector("#drag_btn_item__");
@@ -565,3 +630,39 @@
         }
     }
 </script>
+
+
+<script>
+    const modal = document.querySelector(".modal");
+    const modalContainer = document.querySelector(".modal-container");
+    const openBtn = document.querySelector(".btn");
+
+    openBtn.addEventListener("click", () => {
+        modalContainer.style.display = "block";
+      modal.style.display = "flex";
+    });
+    const modalClose = () => {
+      modal.style.display = "none";
+    };
+
+    window.addEventListener("click", (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // for setup color
+    let priviews = document.getElementById("priview");
+    //   let selectMenu = document.querySelectorAll(".select-box select")
+    let selectMenu = document.getElementById("direction-option")
+    let colorInput = document.querySelectorAll(".colors input");
+
+    const generateGradient = () => {
+      const gradient = `linear-gradient(${selectMenu.value}, ${colorInput[1].value} , ${colorInput[0].value})`;
+      priviews.style.background = gradient;
+      console.log(selectMenu.value);
+    };
+  </script>
+
+
+    

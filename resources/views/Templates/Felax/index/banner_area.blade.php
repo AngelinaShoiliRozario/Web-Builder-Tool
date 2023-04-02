@@ -35,7 +35,7 @@
                     </div> --}}
                     {{-- <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a> --}}
                     <div class="button-container__">
-                        <span class="default-button" onclick="edit_button(this)">Learn More</span>
+                        <span class="default-button " onclick="edit_button(this)">Learn More</span>
                     </div>
 
                 </div>

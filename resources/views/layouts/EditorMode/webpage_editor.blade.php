@@ -23,7 +23,7 @@
         <div class="position-fixed" style="width:100%;">
             <div class="" style="display:flex;">
                 <div class="">
-@include('layouts.editComponents.sidebar.sidebar')
+{{-- @include('layouts.editComponents.sidebar.sidebar') --}}
                 </div>
                 <div class="" style="flex:1;height:100vh;overflow:scroll;">
                     <div style="width:100%!important;position:relative;">

@@ -57,11 +57,37 @@ const border_radius_change_of_btn = (tag) => {
     btn_width_3.setAttribute('value', tag.value);
 }
 
+// change Button Font Family
+const changeBtnFontFamily = (tag) => {
+    let selected_btn__ = document.querySelector('#selected_btn__');
+    console.log(tag.value);
+    if(tag.value == "Delicious Handrawn"){
+        selected_btn__.classList.remove('ApplyFontFamilyOswald');
+        selected_btn__.classList.remove('ApplyFontFamilyRoboto');
+        selected_btn__.classList.add('ApplyFontFamilyHandrawn');
+    }
+    else if(tag.value == "Oswald sans-serif"){
+        selected_btn__.classList.remove('ApplyFontFamilyHandrawn');
+        selected_btn__.classList.remove('ApplyFontFamilyRoboto');
+        selected_btn__.classList.add('ApplyFontFamilyOswald');
+    }
+    else if(tag.value == "Roboto Mono"){
+        selected_btn__.classList.remove('ApplyFontFamilyHandrawn');
+        selected_btn__.classList.remove('ApplyFontFamilyOswald');
+        selected_btn__.classList.add('ApplyFontFamilyRoboto');
+    }
+    console.log('omar',selected_btn__);
+}
+
 const btn_font_size_changer = (tag) => {
     // console.log(tag.value);
     let selected_btn__ = document.querySelector('#selected_btn__');
     selected_btn__.style.fontSize = `${tag.value}px`;
 }
+
+// for text color 
+
+
 // making it underline italic or bold 
 const change_btn_transform = (content) => {
     let selected_btn__ = document.querySelector('#selected_btn__');

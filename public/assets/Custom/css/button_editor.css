@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
 .hover_to_italic:hover{
     font-style: italic;
 }
@@ -6,4 +11,15 @@
 }
 .hover_to_bold:hover {
     font-weight: bold;
+}
+
+
+.ApplyFontFamilyHandrawn{
+    font-family: 'Delicious Handrawn', cursive !important;
+}
+.ApplyFontFamilyOswald{
+    font-family: 'Oswald', sans-serif !important;
+}
+.ApplyFontFamilyRoboto{
+    font-family: 'Roboto Mono', monospace !important;
 }

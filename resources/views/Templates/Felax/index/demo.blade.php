@@ -1,6 +1,10 @@
 @extends('layouts.EditorMode.webpage_editor')
 @section('title')
     <title>Felax on Editor Mode</title>
+    <link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
+/>
 @endsection
 
 @section('header_imports')
@@ -71,6 +75,114 @@
         #text-editor-id:active {
             cursor: move;
         }
+
+        /* for modal  */
+        .modal-container {
+            display: none;
+            height: 100vh;
+            width: 100%;
+        }
+       .modal {
+            display: none;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gradient-modal-content{
+            border-radius: none;
+        }
+        .gradient-modal-body {
+            width: 600px;
+            height: 400px;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mod {
+            min-height: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: white;
+        }
+        .gradient-modal-header{
+            height: 55px;
+
+        }
+        .gradient-modal-footer {
+            border-top: 1px solid gray;
+            text-align: right;
+            padding-right: 20px;
+        }
+        .modal-footer button{
+            border: none;
+            background-color: white;
+            border: 1px solid rgb(125, 112, 112);
+            font-size: 15px;
+        }
+
+        .gradient-close {
+            float: right;
+            margin: 10px;
+            margin-top: 5px;
+            font-size: 30px;
+            cursor: pointer;
+            padding-bottom: 10px;
+        }
+
+            
+        .gradient-box {
+            height: 150px;
+            width: 90%;
+            margin: 0px auto;
+            border-radius: 7px;
+            background: linear-gradient(to left top, #5665E9, #A271F8);
+        }
+        .gradient-row {
+            display: flex;
+            margin: 20px 0;
+            justify-content: space-between;
+        }
+        .options p {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .gradient-row :where(.column, button) {
+            width: calc(100% / 2 - 12px);
+        }
+        .options .select-box {
+            border-radius: 5px;
+            padding: 10px 15px;
+            border: 1px solid #aaa;
+        }
+        .select-box select {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.12rem;
+            background: none;
+        }
+        .options .palette {
+            margin-left: 60px;
+        }
+        .palette input {
+            height: 41px;
+            width: calc(100% / 2 - 20px);
+        }
+        .palette input:last-child {
+            margin-left: 6px;
+        }
+
+
     </style>
     <!-- Link of CSS files -->
     <link rel="stylesheet" href="{{ asset('/assets/Felax/css/animate.min.css') }}">
@@ -346,4 +458,109 @@
             }
         }
     </script>
+
+    {{-- script for button font color --}}
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <script>
+        
+      // Simple example, see optional options for more configuration.
+      const pickr = Pickr.create({
+        el: ".color-picker",
+        theme: "classic", // or 'monolith', or 'nano'
+
+        swatches: [
+          "rgba(244, 67, 54, 1)",
+          "rgba(233, 30, 99, 0.95)",
+          "rgba(156, 39, 176, 0.9)",
+          "rgba(103, 58, 183, 0.85)",
+          "rgba(63, 81, 181, 0.8)",
+          "rgba(33, 150, 243, 0.75)",
+          "rgba(3, 169, 244, 0.7)",
+          "rgba(0, 188, 212, 0.7)",
+          "rgba(0, 150, 136, 0.75)",
+          "rgba(76, 175, 80, 0.8)",
+          "rgba(139, 195, 74, 0.85)",
+          "rgba(205, 220, 57, 0.9)",
+          "rgba(255, 235, 59, 0.95)",
+          "rgba(255, 193, 7, 1)",
+        ],
+
+        components: {
+          // Main components
+          preview: true,
+          opacity: true,
+          hue: true,
+
+          // Input / output Options
+          interaction: {
+            hex: true,
+            rgba: true,
+            hsla: true,
+            hsva: true,
+            cmyk: true,
+            input: true,
+            clear: true,
+            save: true,
+          },
+        },
+      });
+      pickr.on("change", (color, source, instance) => {
+        let newColor = color.toRGBA();
+        document.getElementById(
+          "selected_btn__"
+        ).style.color = `rgba(${newColor[0]},${newColor[1]},${newColor[2]},${newColor[3]})`;
+      });
+    </script>
+
+    {{-- script for button  color --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script> --}}
+    <script>
+        
+      // Simple example, see optional options for more configuration.
+      const pickr = Pickr.create({
+        el: ".bg-color-picker",
+        theme: "classic",
+
+        swatches: [
+          "rgba(244, 67, 54, 1)",
+          "rgba(233, 30, 99, 0.95)",
+          "rgba(156, 39, 176, 0.9)",
+          "rgba(103, 58, 183, 0.85)",
+          "rgba(63, 81, 181, 0.8)",
+          "rgba(33, 150, 243, 0.75)",
+          "rgba(3, 169, 244, 0.7)",
+          "rgba(0, 188, 212, 0.7)",
+          "rgba(0, 150, 136, 0.75)",
+          "rgba(76, 175, 80, 0.8)",
+          "rgba(139, 195, 74, 0.85)",
+          "rgba(205, 220, 57, 0.9)",
+          "rgba(255, 235, 59, 0.95)",
+          "rgba(255, 193, 7, 1)",
+        ],
+
+        components: {
+          preview: true,
+          opacity: true,
+          hue: true,
+          
+          interaction: {
+            hex: true,
+            rgba: true,
+            hsla: true,
+            hsva: true,
+            cmyk: true,
+            input: true,
+            clear: true,
+            save: true,
+          },
+        },
+      });
+      pickr.on("change", (color, source, instance) => {
+        let newColor = color.toRGBA();
+        document.getElementById(
+          "selected_btn__"
+        ).style.color = `rgba(${newColor[0]},${newColor[1]},${newColor[2]},${newColor[3]})`;
+      });
+    </script>
+
 @endsection
