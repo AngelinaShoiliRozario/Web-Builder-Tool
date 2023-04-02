@@ -22,8 +22,8 @@
         </nav>
         <div class="position-fixed" style="width:100%;">
             <div class="" style="display:flex;">
-                <div class="">
-{{-- @include('layouts.editComponents.sidebar.sidebar') --}}
+                <div class="border:1px solid gray; width:120px; height:100vh;">
+                    @include('layouts.editComponents.sidebar.sidebar')
                 </div>
                 <div class="" style="flex:1;height:100vh;overflow:scroll;">
                     <div style="width:100%!important;position:relative;">
@@ -52,9 +52,7 @@
         // setting global variable
         let global_btn;
     </script>
-    <script>
-       
-    </script>
+    <script></script>
 
 
 </body>
