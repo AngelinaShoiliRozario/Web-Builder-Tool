@@ -1,245 +1,61 @@
 @extends('layouts.EditorMode.webpage_editor')
 @section('title')
-    <title>Felax on Editor Mode</title>
+    <title>Asha on Editor Mode</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
 @endsection
 
 @section('header_imports')
-    <style>
-        .padding_button {
-            position: relative;
-            background-color: blueviolet;
-            /* Green */
-            border: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px 32px;
-            height: 120px;
-            width: 180px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
+    <!-- Favicons -->
+    <link href="{{ asset('assets/Asha/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/Asha/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-        .top {
-            position: absolute;
-            display: flex;
-            width: 100%;
-            top: 0;
-            left: 50%;
-            border: none;
-            transform: translate(-50%, 0%);
-        }
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-        .bottom {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 100%;
-            border: none;
+    <!-- Vendor CSS Files -->
+    <link href="{{ asset('assets/Asha/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/Asha/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-            transform: translate(-50%, 0%);
-        }
-
-        .left {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            border: none;
-            height: 100%;
-            transform: translate(0%, -50%);
-        }
-
-        .right {
-            position: absolute;
-            top: 50%;
-            right: 0;
-            height: 100%;
-            border: none;
-
-            transform: translate(0%, -50%);
-        }
-
-        .editor {
-            background-color: #313131;
-            padding: 10px;
-        }
-
-        #text-editor-id:active {
-            cursor: move;
-        }
-
-        /* for modal  */
-        .modal-container {
-            display: none;
-            height: 100vh;
-            width: 100%;
-        }
-
-        .modal {
-            display: none;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
-            position: fixed;
-            top: 0;
-            left: 0;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .gradient-modal-content {
-            border-radius: none;
-        }
-
-        .gradient-modal-body {
-            width: 600px;
-            height: 400px;
-            border-radius: 2px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .mod {
-            min-height: 20px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            background-color: white;
-        }
-
-        .gradient-modal-header {
-            height: 55px;
-
-        }
-
-        .gradient-modal-footer {
-            border-top: 1px solid gray;
-            text-align: right;
-            padding-right: 20px;
-        }
-
-        .modal-footer button {
-            border: none;
-            background-color: white;
-            border: 1px solid rgb(125, 112, 112);
-            font-size: 15px;
-        }
-
-        .gradient-close {
-            float: right;
-            margin: 10px;
-            margin-top: 5px;
-            font-size: 30px;
-            cursor: pointer;
-            padding-bottom: 10px;
-        }
-
-
-        .gradient-box {
-            height: 150px;
-            width: 90%;
-            margin: 0px auto;
-            border-radius: 7px;
-            background: linear-gradient(to left top, #5665E9, #A271F8);
-        }
-
-        .gradient-row {
-            display: flex;
-            margin: 20px 0;
-            justify-content: space-between;
-        }
-
-        .options p {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .gradient-row :where(.column, button) {
-            width: calc(100% / 2 - 12px);
-        }
-
-        .options .select-box {
-            border-radius: 5px;
-            padding: 10px 15px;
-            border: 1px solid #aaa;
-        }
-
-        .select-box select {
-            width: 100%;
-            border: none;
-            outline: none;
-            font-size: 1.12rem;
-            background: none;
-        }
-
-        .options .palette {
-            margin-left: 60px;
-        }
-
-        .palette input {
-            height: 41px;
-            width: calc(100% / 2 - 20px);
-        }
-
-        .palette input:last-child {
-            margin-left: 6px;
-        }
-    </style>
-    <!-- Link of CSS files -->
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/fontawsome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/meanmenu.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/nice-select.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/magnific-popup.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/jquery-ui.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/odometer.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/responsive.css') }}">
-    <link rel="icon" type="image/png" href="{{ asset('assets/Felax/images/fav-icon.png') }}">
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('assets/Asha/css/style.css') }}" rel="stylesheet">
+    {{-- mine --}}
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 @endsection
 
 @section('site')
     @include('layouts.editComponents.button_editor')
     @include('layouts.editComponents.texteditor')
-    @include('Templates.Felax.index.index')
+    @include('Templates.Asha.index')
 @endsection
 
 @section('script_imports')
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <!-- Link of JS files -->
-    <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{ asset('assets/Felax/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/meanmenu.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/TweenMax.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/form-validator.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/contact-form-script.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/ajaxchimp.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/appear.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/odometer.min.js') }}"></script>
-    <script src="{{ asset('assets/Felax/js/custom.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('assets/Asha/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/waypoints/noframework.waypoints.js') }}"></script>
+    <script src="{{ asset('assets/Asha/vendor/php-email-form/validate.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ asset('assets/Asha/js/main.js') }}"></script>
 
     <script>
         const remove_btn_editor = (tag) => {

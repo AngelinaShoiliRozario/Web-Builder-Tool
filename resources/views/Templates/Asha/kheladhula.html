@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+
+        @media screen and (max-width: 500px) {
+            .container {
+
+                flex-direction: column;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .image {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="setContainerWidth('300px')">300px</button>
+        <button onclick="setContainerWidth('100%')">Full Screen</button>
+    </div>
+    <div style="background-color: lightblue;display: flex;" class="container">
+        <div class="content" style="flex:1;height:300px;">
+            <b>conmtent</b>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis sed blanditiis, quibusdam illum ex
+                voluptate ducimus totam commodi recusandae quod quisquam rem numquam tempore id omnis, consequatur
+                dolorem deleniti odio?</p>
+        </div>
+        <div class="image"
+            style="flex:1;height:300px!important;display:flex;align-items: center;justify-content: center;background:lightcoral">
+            image
+        </div>
+    </div>
+
+    <script>
+        function setContainerWidth(width) {
+            console.log(width);
+            var container = document.querySelector('.container');
+            container.style.width = width;
+        }
+    </script>
+</body>
+
+</html>

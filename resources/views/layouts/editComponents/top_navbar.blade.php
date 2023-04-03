@@ -1,8 +1,4 @@
-<style>
-    #_section_info_id_{
-        background: red;
-    }
-</style>
+
 <div style="height:100%;display:flex;justify-content:space-around;align-items:center;">
     <div class="left">
         Logo
