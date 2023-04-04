@@ -27,11 +27,8 @@
                     {{-- @yield('sidebar') --}}
                     @include('layouts.editComponents.sidebar.sidebar')
                 </div>
-                <div class="" style="flex:1;height:100vh;overflow:scroll;display:flex;justify-content:center;">
-                    {{-- <div style="border:10px solid red;width:700px;">
-                        @yield('site')
-                    </div> --}}
-                    <div style="border:;width:100%;">
+                <div  style="flex:1;height:100vh;overflow:scroll;display:flex;justify-content:center;">
+                    <div style="border:;width:100%;" class="mobile">
                         @yield('site')
                     </div>
                 </div>
@@ -40,25 +37,7 @@
 
         </div>
     </main>
-    {{-- <main>
-        <nav class="text-white" style="position: sticky;top:0px;height:50px;background:black;z-index:1000;">
-            @include('layouts.editComponents.top_navbar')
-        </nav>
-        <div class="position-fixed" style="width:100%;">
-            <div style="display:flex;">
-                <div class="border:1px solid gray; width:120px; height:100vh;"> --}}
-    {{-- @include('layouts.editComponents.sidebar.sidebar') --}}
-    {{-- </div>
-                <div class="" style="flex:1;height:100vh;overflow:scroll;">
-                    <div style="width:100%!important;position:relative;">
-                        @yield('site')
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </main> --}}
+    
     @yield('script_imports')
     <script src="{{ asset('/assets/Custom/js/button_editor.js') }}"></script>
     <script>

@@ -206,6 +206,9 @@
     <link rel="stylesheet" href="{{ asset('/assets/Felax/css/odometer.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/Felax/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/Felax/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/Felax/css/custom-responsive.scss') }}">
+
+
     <link rel="icon" type="image/png" href="{{ asset('assets/Felax/images/fav-icon.png') }}">
 @endsection
 
@@ -234,6 +237,7 @@
     <script src="{{ asset('assets/Felax/js/appear.min.js') }}"></script>
     <script src="{{ asset('assets/Felax/js/odometer.min.js') }}"></script>
     <script src="{{ asset('assets/Felax/js/custom.js') }}"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -1,4 +1,4 @@
-<div class="main-banner">
+<div class="main-banner" onmouseover="this.style.border='1px solid blue'" onmouseout="this.style.border='0px solid blue'">
     <div class="banner-social-icon">
         <ul>
             <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
