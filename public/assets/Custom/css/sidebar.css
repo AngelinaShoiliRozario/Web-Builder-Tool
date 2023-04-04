@@ -238,7 +238,7 @@ body {
 }
 .wp-content {
   margin-top: 60px;
-  margin-left: 75px;
+
 }
 
 
@@ -288,10 +288,11 @@ body {
 }
 [data-component='sidebar'] .submenu {
   position: fixed;
-  left: 90px;
+  left: 110px;
   width: 280px;
-  top: 60px;
-  background-color: #dbddde;
+  top: 50px;
+  background-color: white;
+  box-shadow:0 0 5px gray;
   height: 100vh;
   /* opacity: 0; */
   /* visibility: hidden; */
@@ -452,6 +453,7 @@ body {
   font-weight: 600;
   color: gray;
 }
+
 [data-component='sidebar'] .sub-submenu-head p svg {
   width: 15px;
   height: 15px;
