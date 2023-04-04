@@ -23,7 +23,7 @@
         <div class="position-fixed" style="width:100%;">
             <div class="" style="display:flex;">
                 <div class="border:1px solid gray; width:120px; height:100vh;">
-                    @include('layouts.editComponents.sidebar.sidebar')
+                    {{-- @include('layouts.editComponents.sidebar.sidebar') --}}
                 </div>
                 <div class="" style="flex:1;height:100vh;overflow:scroll;">
                     <div style="width:100%!important;position:relative;">
@@ -53,6 +53,10 @@
         let global_btn;
     </script>
     <script></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickrs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr_3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr_4.min.js"></script>
 
 
 </body>

@@ -35,7 +35,7 @@
                     </div> --}}
                     {{-- <a class="default-button" href="about.html" onclick="edit_button(this)">Learn More</a> --}}
                     <div class="button-container__">
-                        <span class="default-button " onclick="edit_button(this)">Learn More</span>
+                        <span style="animation: slide-in 0.5s ease-out;" class="default-button " onclick="edit_button(this)"  onmouseout="this.style.color = 'white'">Learn More</span>
                     </div>
 
                 </div>

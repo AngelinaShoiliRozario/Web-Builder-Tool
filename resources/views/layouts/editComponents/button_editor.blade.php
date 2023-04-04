@@ -215,15 +215,15 @@
                         <div style="background: white;padding:15px;margin-bottom:20px;">
                             <div style="display: flex;justify-content:space-between;">
                                 <label for="" style="width:30%;">Font</label>
-                                <select name="" id="" style="width:60%;padding:3px;" onchange="changeBtnFontFamily(this)">
-                                    <option value="">Abril Falface</option>
-                                    <option value="Arial">Arial</option>
-                                    <option value="Comfortoo">Comfortoo</option>
-                                    <option value="Red Rose">Red Rose</option>
-                                    <option value="Work Sans">Work Sans</option>
-                                    <option class="ApplyFontFamilyHandrawn" value="Delicious Handrawn">Delicious Handrawn</option>
-                                    <option class="ApplyFontFamilyOswald" value="Oswald sans-serif">Oswald & sans-serif</option>
-                                    <option class="ApplyFontFamilyRoboto" value="Roboto Mono">Roboto Mono</option>
+                                <select name="" id="" style="width:60%;padding:3px; font-family: 'Courgette', cursive;" onchange="changeBtnFontFamily(this)">
+                                    <option style="font-family: 'Courgette', cursive;" value="Courgette cursive">Courgette cursive</option>
+                                    <option style="font-family: 'Righteous', cursive;" value="Righteous cursive">Righteous cursive</option>
+                                    <option style="font-family: 'Lobster', cursive;" value="Lobster cursive">Lobster cursive</option>
+                                    <option style="font-family: 'Bebas Neue', cursive;" value="Bebas Neue cursive">Bebas Neue</option>
+                                    <option style="font-family: 'Alkatra', cursive;" value="Alkatra cursive">Alkatra cursive</option>
+                                    <option style="font-family: 'Delicious Handrawn';" value="Delicious Handrawn">Delicious Handrawn</option>
+                                    <option style="font-family: 'Oswald', sans-serif;" value="Oswald sans-serif">Oswald & sans-serif</option>
+                                    <option style="font-family: 'Roboto Mono', monospace;" value="Roboto Mono">Roboto Mono</option>
                                 </select>
                             </div>
                             <div style="display: flex;justify-content:space-between;margin-top:8px;">
@@ -242,11 +242,11 @@
                                 <label for="" style="width:30%;">Font Format</label>
                                 <div>
                                     <span
-                                        style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;" onclick="change_btn_transform('bold')"><i
+                                        style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;" onclick="change_btn_transform(this,'bold')"><i
                                             class="fa-solid fa-bold" ></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform('underline')"><i
+                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform(this,'underline')"><i
                                             class="fa-solid fa-underline" ></i></span>
-                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform('italic')"><i
+                                    <span style="cursor:pointer;padding:8px 13px;background:#f2f2f2;" onclick="change_btn_transform(this,'italic')"><i
                                             class="fa-solid fa-italic" ></i></span>
 
                                 </div>
@@ -266,20 +266,21 @@
                             </div>
                             <hr>
                             <div style="display: flex;justify-content:space-between;margin-top:8px;">
-                                <label for="">Hover Font Color</label>
-                                <div
+                                <label style="hover:color:red" for="">Hover Font Color</label>
+                                <div class="hover-color-picker"></div>
+                                {{-- <div
                                     style="height: 25px;width:25px;border-radius:50%;border:1.5px solid gray;background:white;">
-                                </div>
+                                </div> --}}
                             </div>
                             <div style="display: flex;justify-content:space-between;margin-top:25px;">
                                 <label for="">Hover Font Format</label>
                                 <div>
-                                    <span onclick="set_btn_hover_transform('bold')"
+                                    <span onclick="set_btn_hover_transform(this,'bold')"
                                         style="cursor:pointer;padding:8px 13px;background:#f2f2f2;box-shadow: inset 0 0 5px gray;"><i
                                             class="fa-solid fa-bold"></i></span>
-                                    <span onclick="set_btn_hover_transform('underline')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span onclick="set_btn_hover_transform(this,'underline')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-underline"></i></span>
-                                    <span onclick="set_btn_hover_transform('italic')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
+                                    <span onclick="set_btn_hover_transform(this,'italic')" style="cursor:pointer;padding:8px 13px;background:#f2f2f2;"><i
                                             class="fa-solid fa-italic"></i></span>
 
                                 </div>
@@ -287,39 +288,49 @@
                             <div style="display: flex;align-items:center;margin-top:10px;">
                                 <label for="" style="width:50%;">Background Color</label>
                                 <div style="width:50%;display: flex; justify-content:end; align-items:center;">
-                                    {{-- <div class="bg-color-picker"></div> --}}
-                                    <span style="background: blue;height:25px;width:25px;border-radius:50%;border:2px solid white;outline:1px solid gray;"></span>
+                                    <div class="bg-color-picker"></div>
                                 </div>
                             </div>
                             <div style="display: flex;align-items:center;margin-top:10px;">
                                 <label for="" style="width:50%;">Gradient BG Color</label>
                                 <div style="width:50%;display: flex; justify-content:end; align-items:center;">
                                     <span
-                                        style="background: blue;height:25px;width:50px;border:2px solid white;outline:1px solid gray;" class="gradient-btn btn"></span>
+                                        style="background: blue;height:25px;width:50px;border:2px solid white;outline:1px solid gray;" onclick="openGradientBgModal()" class="gradient-btn btn"></span>
                                 </div>
                             </div>
                             <div style="display: flex;align-items:center;margin-top:10px;">
                                 <label for="" style="width:30%;">Border</label>
                                 <div
                                     style="width:70%;display: flex; justify-content:space-between; align-items:center;">
-                                    <input type="range" id="slider_3" name="slider_3" min="10"
-                                        max="100" value="5"
-                                        oninput="document.querySelector('#btn_width_3').value = document.querySelector('#slider_3').value">
-                                    <input type="text" id="btn_width_3" value="0"
+                                    <input type="range" id="slider_3" name="slider_3" min="1"
+                                        max="100" value="1" oninput="border_change_of_btn(this)">
+                                    <input type="text" id="btn_border_1" value="0"
                                         style="width:45px;padding:3px 5px ;text-align:center;">
                                     <span><i class="fa-solid fa-ban" style="font-size: 25px;"></i></span>
+                                </div>
+                            </div>
+                            <div style="display: flex;align-items:center;margin-top:10px;">
+                                <label for="" style="width:50%;">Border Color</label>
+                                <div style="width:50%;display: flex; justify-content:end; align-items:center;">
+                                    <div class="border-color-picker"></div>
                                 </div>
                             </div>
                             <hr>
 
                             <div>
                                 <label for="" style="margin-bottom:10px;">Background Image:</label>
-                                <div class="image"
-                                    style="cursor: pointer;border: 2px dotted black;display:flex;align-items:center;justify-content:center;">
-                                    <img src="{{ asset('/assets/Custom/images/add_img.png') }}" alt="add image here"
-                                        style="height: 100px;">
+                                <div style="cursor: pointer;border: 2px dotted black;" class="avatar-upload">
+                                    <div class="avatar-edit">
+                                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                        <label for="imageUpload"></label>
+                                    </div>
+                                    <div class="avatar-preview">
+                                        <div id="imagePreview" >
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                             <hr>
                             <div style="display:flex;justify-content:center;">
                                 <span style="border:1px solid gray;padding:5px 15px;border-radius:20px;">Reset to theme
@@ -344,15 +355,15 @@
                             <div class="trigger"
                                 style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
                                 <label for="" style="width:40%;">Trigger</label>
-                                <select name="" id="" style="width:60%;padding:4px;">
-                                    <option value="entrace">Entrance</option>
+                                <select name="" id="getTrigger" style="width:60%;padding:4px;" oninput="find_animation_trigger(this)">
+                                    <option value="Entrance">Entrance</option>
                                     <option value="Scroll">Scroll</option>
                                 </select>
                             </div>
-                            <div class="animation"
+                            <div class="animation" id="Animation_"
                                 style="display:flex;justify-content:space-between;margin-top:10px;">
                                 <label for="" style="width:40%;">Animation</label>
-                                <select name="" id="" style="width:60%;padding:4px;">
+                                <select name="" id="" style="width:60%;padding:4px;" oninput="create_animation(this)">
                                     <option value="None">None</option>
                                     <option value="Fade In">Fade In</option>
                                     <option value="Slide In">Slide In</option>
@@ -366,6 +377,18 @@
                                     <option value="Shake">Shake</option>
                                     <option value="Tada">Tada</option>
                                     <option value="Wobble">Wobble</option>
+                                </select>
+                            </div>
+
+                            <div class="trigger"
+                                style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;">
+                                <label for="" style="width:40%;">Direction</label>
+                                <select name="" id="getTrigger" style="width:60%;padding:4px;" oninput="find_animation_trigger(this)">
+                                    <option style="display: none" value="In place" id="In_place">In place</option>
+                                    <option value="From right">From right</option>
+                                    <option value="From left">From left</option>
+                                    <option value="From bottom">From bottom</option>
+                                    <option value="From top">From top</option>
                                 </select>
                             </div>
 
@@ -390,25 +413,23 @@
                                 <div
                                     style="width:100%;display: flex; justify-content:space-between; align-items:center;">
 
-                                    <input type="range" id="slider_space" name="slider_space" min="0"
-                                        max="2.5" value="1.5" step="0.1" value="5"
-                                        style="width:60%;"
-                                        oninput="document.querySelector('#btn_width_space').value = document.querySelector('#slider_space').value">
-                                    <input type="text" id="btn_width_space" value="1.5"
+                                    <input type="range" id="letter_spacer" name="slider_space" min="0"
+                                        max="2.5" value="1.5" step="0.1" style="width:60%;" oninput="letter_spacing_change_of_btn(this)">
+
+                                    <input type="text" id="btn_letter_space" value="1.5"
                                         style="width:60px;padding:5px;text-align:center;">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <label for="">Top Bottom Spacing</label>
+                            <label for="">Top and Bottom Spacing</label>
                             <div style="display: flex;align-items:center;margin-top:10px;">
                                 <div
                                     style="width:100%;display: flex; justify-content:space-between; align-items:center;">
 
                                     <input type="range" id="slider_tb" name="slider_tb" min="1"
-                                        max="50" value="10" style="width:60%;"
-                                        oninput="document.querySelector('#btn_width_tb').value = document.querySelector('#slider_tb').value">
-                                    <input type="text" id="btn_width_tb" value="10"
+                                        max="50" value="10" style="width:60%;" oninput="top_bottom_spacing_of_btn(this)">
+                                    <input type="text" id="top_bottom_spacing" value="10"
                                         style="width:60px;padding:5px;text-align:center;">
                                 </div>
                             </div>
@@ -420,9 +441,8 @@
                                     style="width:100%;display: flex; justify-content:space-between; align-items:center;">
 
                                     <input type="range" id="slider_lr" name="slider_lr" min="1"
-                                        max="50" value="15" style="width:60%;"
-                                        oninput="document.querySelector('#btn_width_lr').value = document.querySelector('#slider_lr').value">
-                                    <input type="text" id="btn_width_lr" value="15"
+                                        max="50" value="15" style="width:60%;" oninput="left_right_spacing_of_btn(this)">
+                                    <input type="text" id="left_right_spacing" value="15"
                                         style="width:60px;padding:5px;text-align:center;">
                                 </div>
                             </div>
@@ -632,17 +652,19 @@
 </script>
 
 
-<script>
+{{-- <script>
     const modal = document.querySelector(".modal");
     const modalContainer = document.querySelector(".modal-container");
     const openBtn = document.querySelector(".btn");
+    let selected_btn__ = document.querySelector('#selected_btn__');
 
     openBtn.addEventListener("click", () => {
-        modalContainer.style.display = "block";
+        // modalContainer.style.display = "block";
       modal.style.display = "flex";
     });
     const modalClose = () => {
       modal.style.display = "none";
+      console.log('selected_btn__', selected_btn__);
     };
 
     window.addEventListener("click", (e) => {
@@ -653,16 +675,16 @@
 
     // for setup color
     let priviews = document.getElementById("priview");
-    //   let selectMenu = document.querySelectorAll(".select-box select")
     let selectMenu = document.getElementById("direction-option")
     let colorInput = document.querySelectorAll(".colors input");
 
     const generateGradient = () => {
       const gradient = `linear-gradient(${selectMenu.value}, ${colorInput[1].value} , ${colorInput[0].value})`;
       priviews.style.background = gradient;
+    //   selected_btn__.style.background = gradient;
       console.log(selectMenu.value);
     };
-  </script>
+</script> --}}
 
 
     

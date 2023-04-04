@@ -76,12 +76,8 @@ href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
             cursor: move;
         }
 
-        /* for modal  */
-        .modal-container {
-            display: none;
-            height: 100vh;
-            width: 100%;
-        }
+        /* for gradient modal  */
+       
        .modal {
             display: none;
             height: 100%;
@@ -100,7 +96,7 @@ href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
         }
         .gradient-modal-body {
             width: 600px;
-            height: 400px;
+            height: 380px;
             border-radius: 2px;
             display: flex;
             flex-direction: column;
@@ -182,6 +178,75 @@ href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
             margin-left: 6px;
         }
 
+
+        /* Image  preview  css  */
+    .avatar-upload {
+	 position: relative;
+	 max-width: 100%;
+    }
+    .avatar-upload .avatar-edit {
+        position: absolute;
+        left: 130px;
+        top: 60px;
+        z-index: 1;
+    }
+    .avatar-upload .avatar-edit input {
+        display: none;
+    }
+    .avatar-upload .avatar-edit input + label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 100%;
+        background: #f1f1f1;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all 0.2s ease-in-out;
+    }
+    .avatar-upload .avatar-edit input + label:hover {
+        background: #dcdbdb;
+        border-color: #d6d6d6;
+    }
+    .avatar-upload .avatar-edit input + label:after {
+        content: "+";
+        font-family: "Font Awesome 5 Free";
+        color: #141313;
+        position: absolute;
+        font-weight: 900;
+        font-size: 18px;
+        top: 4px;
+        left: 2px;
+        right: 0;
+        text-align: center;
+        margin: auto;
+    }
+    .avatar-upload .avatar-preview {
+        width: 100%;
+        height: 150px;
+        position: relative;
+        /* border-radius: 100%; */
+        border: 6px solid #f8f8f8;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    }
+    .avatar-upload .avatar-preview > div {
+        width: 100%;
+        height: 100%;
+        /* border-radius: 100%; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    /* @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  } */
 
     </style>
     <!-- Link of CSS files -->
@@ -512,55 +577,6 @@ href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"
       });
     </script>
 
-    {{-- script for button  color --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script> --}}
-    <script>
-        
-      // Simple example, see optional options for more configuration.
-      const pickr = Pickr.create({
-        el: ".bg-color-picker",
-        theme: "classic",
-
-        swatches: [
-          "rgba(244, 67, 54, 1)",
-          "rgba(233, 30, 99, 0.95)",
-          "rgba(156, 39, 176, 0.9)",
-          "rgba(103, 58, 183, 0.85)",
-          "rgba(63, 81, 181, 0.8)",
-          "rgba(33, 150, 243, 0.75)",
-          "rgba(3, 169, 244, 0.7)",
-          "rgba(0, 188, 212, 0.7)",
-          "rgba(0, 150, 136, 0.75)",
-          "rgba(76, 175, 80, 0.8)",
-          "rgba(139, 195, 74, 0.85)",
-          "rgba(205, 220, 57, 0.9)",
-          "rgba(255, 235, 59, 0.95)",
-          "rgba(255, 193, 7, 1)",
-        ],
-
-        components: {
-          preview: true,
-          opacity: true,
-          hue: true,
-          
-          interaction: {
-            hex: true,
-            rgba: true,
-            hsla: true,
-            hsva: true,
-            cmyk: true,
-            input: true,
-            clear: true,
-            save: true,
-          },
-        },
-      });
-      pickr.on("change", (color, source, instance) => {
-        let newColor = color.toRGBA();
-        document.getElementById(
-          "selected_btn__"
-        ).style.color = `rgba(${newColor[0]},${newColor[1]},${newColor[2]},${newColor[3]})`;
-      });
-    </script>
+    
 
 @endsection
