@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/button_style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/button_editor.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/sidebar.css') }}">
+   
+
 
 
     {{-- template css links --}}
@@ -23,7 +25,7 @@
         </nav>
         <div class="position-fixed" style="width:100%;">
             <div class="" style="display:flex;">
-                <div class="" style="border:1px solid gray; width:110px; height:100vh;">
+                <div class="" style="border:1px solid gray; width:90px; height:100vh;">
                     {{-- @yield('sidebar') --}}
                     @include('layouts.editComponents.sidebar.sidebar')
                 </div>
@@ -40,6 +42,7 @@
     
     @yield('script_imports')
     <script src="{{ asset('/assets/Custom/js/button_editor.js') }}"></script>
+     
     <script>
         const change_this_btn_ = (tag) => {
             let selected_btn__ = document.querySelector('#selected_btn__');
