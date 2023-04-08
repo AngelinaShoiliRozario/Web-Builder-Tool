@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/button_style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/button_editor.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/Custom/css/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Custom/css/section_sidebar.css') }}">
+
    
 
 
@@ -28,6 +30,8 @@
                 <div class="" style="border:1px solid gray; width:90px; height:100vh;">
                     {{-- @yield('sidebar') --}}
                     @include('layouts.editComponents.sidebar.sidebar')
+                  
+
                 </div>
                 <div  style="flex:1;height:100vh;overflow:scroll;display:flex;justify-content:center;">
                     <div style="border:;width:100%;" class="mobile">
