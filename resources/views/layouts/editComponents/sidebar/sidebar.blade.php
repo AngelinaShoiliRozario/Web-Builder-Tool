@@ -78,6 +78,9 @@
                         <i class="fa-solid fa-chevron-right"></i>
                     </span>
                 </div>
+                <div class="content_part_1_sub">
+                   sub content
+                </div>
                 <div class="content_part_1">
                     <span>Buttons</span>
                     <span class="center_flex">
